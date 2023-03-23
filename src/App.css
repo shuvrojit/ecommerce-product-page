@@ -1,0 +1,52 @@
+:root {
+    --very-dark-blue: 220, 13%, 13%;
+    --orange: 26, 100%, 55%;
+    --pale-orange: 25, 100%, 94%;
+    --very-dark-blue: 220, 13%, 13%;
+    --dark-grayish-blue: 219, 9%, 45%;
+    --grayish-blue: 220, 14%, 75%;
+    --light-grayish-blue: 223, 64%, 98%;
+    --white: 4, 0%, 100%;
+    --black: 0, 0%, 0%;
+}
+
+body {
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 1rem;
+}
+
+.nav-links {
+    display: none;
+    background-color: hsl(var(--grayish-blue));
+    max-width: 70vw;
+    min-height: 100vh;
+    padding: 2rem;
+
+}
+
+.nav-links>img {
+    margin-bottom: 3rem;
+    cursor: pointer;
+}
+
+.nav-links li {
+    padding: 0.8rem 0;
+}
+
+#avatar {
+    max-width: 2.4rem;
+    max-height: 2.4rem;
+}
+
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1rem 2rem;
+}
+
+.header img {
+    padding: 0 0.5rem;
+    cursor: pointer;
+}
