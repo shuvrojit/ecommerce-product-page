@@ -2,11 +2,10 @@ import Navbar from "./navbar";
 
 export function toggleMenu() {
     const menu = document.getElementById("navigation")
-    if (menu.style.display === "block") {
-
-        menu.style.display = "none"
+    if (menu.style.visibility === "visible") {
+        menu.style.visibility = "hidden"
     } else {
-        menu.style.display = "block"
+        menu.style.visibility = "visible"
     }
 }
 
@@ -16,8 +15,8 @@ export default function Header() {
             <Navbar />
             <div className="header">
                 <div className="logo">
-                    <img onClick={toggleMenu} src="./images/icon-menu.svg" alt="menu" />
-                    <img src="./images/logo.svg" alt="sneakers-logo" />
+                    <img id="menu-icon" onClick={toggleMenu} src="./images/icon-menu.svg" alt="menu" />
+                    <img id="sneakers-logo" src="./images/logo.svg" alt="sneakers" />
                 </div>
                 <div className="logo">
                     <img src="./images/icon-cart.svg" alt="cart" />
