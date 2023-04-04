@@ -73,6 +73,10 @@ body {
     cursor: pointer;
 }
 
+hr {
+        display: none;
+    }
+
 /* Image Slider */
 
 .image-slider {
@@ -248,7 +252,7 @@ body {
 
     .header {
         max-width: 80vw;
-        margin: 1.5rem auto;
+        margin: 1.5rem auto 1rem;
     }
 
     #toggle-menu {
@@ -274,5 +278,11 @@ body {
     }
     .nav-links li {
         color: #e9e9ed;
+    }
+    hr {
+        display: block;
+        border: 1px solid #e9e9ed;
+        width: 80vw;
+        margin: 0 auto;
     }
 }
