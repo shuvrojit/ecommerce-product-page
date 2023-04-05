@@ -11,7 +11,7 @@ const Description = (props) => {
           <p>${((props.price * props.discount) / 100).toFixed(2)}</p>
           <p id="discount-price">{props.discount}%</p>
         </div>
-      <p><strike>${(props.price * 1).toFixed(2)}</strike></p>
+      <p id="original-price">${(props.price * 1).toFixed(2)}</p>
 
       </div>
     </div>

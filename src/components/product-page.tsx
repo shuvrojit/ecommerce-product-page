@@ -9,11 +9,21 @@ import cartImage from "/images/icon-cart.svg"
 import minus from "/images/icon-minus.svg"
 import plus from "/images/icon-plus.svg"
 
+const ProductData = {
+  brand : "sneaker company",
+  description: "Nullam eu ante vel est convallis dignissim.  Fusce suscipit, wisi nec facilisis facilisis, est dui fermentum leo, quis tempor ligula erat quis odio.  Nunc porta vulputate tellus.  Nunc rutrum turpis sed pede.",
+  title: "Fall Limited Edition Sneakers",
+  price: 250,
+  discount: 50,
+  images: [product1, product2, product3, product4],
+  id: 23,
+  count: 0
+}
 
+const cart = []
 
 const ProductPage = () => {
   const [count, setCount] = useState(0)
-  const images = [product1, product2, product3, product4]
 
   async function addCounter() {
     if (count > 0) {
@@ -26,27 +36,37 @@ const ProductPage = () => {
     }
   }
 
-  return (
-    <div>
-      <ImageSlider images={images} />
-      <Description
-        brand="SNEAKER COMPANY"
-        title="Fall Limited Edition Sneakers"
-        description="Nullam eu ante vel est convallis dignissim.  Fusce suscipit, wisi nec facilisis facilisis, est dui fermentum leo, quis tempor ligula erat quis odio.  Nunc porta vulputate tellus.  Nunc rutrum turpis sed pede."
-        price="250"
-        discount="50"
-      />
+  async function addToCart() {
+    ProductData.count = count;
+    cart.push(ProductData)
+  }
 
-      <div className="cart" >
-      <img onClick={addCounter} src={minus}/>
+  return (
+    <div className="product-container">
+      <ImageSlider images={ProductData.images} />
+      <div className="cart">
+      <Description
+    brand={ProductData.brand}
+        title={ProductData.title}
+        description={ProductData.description}
+        price={ProductData.price}
+        discount={ProductData.discount}
+      />
+      <div className="add-items" >
+      <div className="cart-items" >
+        <img onClick={addCounter} src={minus} />
         <p>{count}</p>
-        <img onClick={subCounter} src={plus}/>
+        <img onClick={subCounter} src={plus} />
       </div>
+
       <div className="addToCart" >
-      <button><img src={cartImage}/> <p>Add to Cart</p> </button>
+      <button onClick={addToCart}><img src={cartImage} /> <p>Add to Cart</p> </button>
+      </div>
+      </div>
       </div>
     </div>
   )
 }
 
+export {cart}
 export default ProductPage

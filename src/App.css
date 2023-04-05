@@ -15,6 +15,9 @@ body {
     font-size: 1rem;
 }
 
+.gallery {
+    display: none;
+}
 
 
 .nav-links {
@@ -45,12 +48,23 @@ body {
 
 .nav-links li {
     padding: 0.8rem 0;
+
+}
+
+.nav-links>ul>li>a:hover {
+
+    color: hsl(var(--orange))
 }
 
 #avatar {
     width: 1.5rem;
     height: 1.5rem;
+    transition: transform 0.5s ease-in;
 }
+#avatar:hover {
+    transform: scale(1.10);
+}
+
 
 #sneakers-logo {
     width: 9.0rem;
@@ -74,8 +88,79 @@ body {
 }
 
 hr {
-        display: none;
+    display: none;
     }
+
+.nav-cart {
+    background-color: white;
+    position: absolute;
+    z-index: 99;
+    width: 315px;
+    /* max-width: 350px; */
+    /* height: 200px; */
+    top: 5rem;
+    right: 1rem;
+    /* border: 1px solid black; */
+    border-radius: 5px;
+    box-shadow: 0px 10px 10px -2px rgba(0,0,0,0.19);
+}
+
+.nav-cart h3 {
+    margin: 1rem 1.5rem;
+}
+.nav-cart-items {
+    margin-top: 1rem;
+    border-top: 1px solid black;
+    padding: 1rem 0;
+    /* height: 70%; */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.single-item {
+    max-width: 300px;
+}
+
+.cart-item {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    text-align: start;
+    color: darkgray;
+}
+.cart-item b {
+    color: black;
+}
+
+.cart-item button {
+    margin-left: 10px;
+}
+
+.nav-cart-items>button {
+    width: 85%;
+    height: 3.0rem;
+    margin: 0.6rem 0;
+    border: none;
+    background-color: hsl(var(--orange));
+    color: white;
+    font-size: 1rem;
+    border-radius: 10px;
+
+}
+
+#icon-dl {
+    width:1rem;
+    height:1rem;
+    margin-top: 0.5rem;
+}
+
+.nav-cart-items img {
+    width: 2.5rem;
+    height: 2.5rem;
+}
 
 /* Image Slider */
 
@@ -135,6 +220,7 @@ hr {
     font-size: 0.8rem;
     margin: 0 auto 0.5rem;
     letter-spacing: 0.05rem;
+    text-transform: uppercase;
 }
 
 #product-description {
@@ -146,10 +232,13 @@ hr {
 
 .price-section {
     display: flex;
-    width: 100%;
     justify-content: space-between;
     align-items: center;
 
+}
+
+#original-price {
+    text-decoration: line-through;
 }
 
 .price-section:last-child {
@@ -181,7 +270,7 @@ hr {
 
 /* cart */
 
-.cart {
+.cart-items {
     display: flex;
     width: 85vw;
     height: 3rem;
@@ -193,7 +282,7 @@ hr {
     font-weight: 700;
 }
 
-.cart img {
+.cart-items img {
     font-size: 1.8rem;
     margin: 1rem;
 }
@@ -257,7 +346,6 @@ hr {
 
     #toggle-menu {
         display: none;
-        postion: absolute;
     }
 
     .nav-links {
@@ -284,5 +372,84 @@ hr {
         border: 1px solid #e9e9ed;
         width: 80vw;
         margin: 0 auto;
+    }
+
+    .image-slider img {
+        max-width: 320px;
+        max-height: 20rem;
+        border-radius: 1rem;
+        margin: 0;
+    }
+
+    .image-slider button {
+        display: none;
+    }
+
+    .product-container {
+        width: 800px;
+        margin: 4rem auto;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .cart {
+        width: 400px;
+        padding: 5rem 1rem;
+    }
+
+    .price-section {
+        max-width: 200px;
+    }
+    .cart-items, .addToCart {
+        max-width: 300px;
+    }
+
+    #product-description {
+        max-width: 400px;
+    }
+
+    .slider-nav {
+        display: block;
+
+    }
+    .description h1 {
+        font-size: 2.5rem;
+        max-width: 400px;
+    }
+    .price-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cart-items {
+        width: 120px;
+        margin-left: 0;
+    }
+
+    .addToCart {
+        width: 220px;
+    }
+    .add-items {
+        display: flex;
+    }
+
+    .gallery {
+        display: block;
+        min-width: 350px;
+    }
+    .gallery img {
+        height:60px;
+        width: 60px;
+        margin: 0 1rem;
+
+    }
+    .images {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-cart {
+        top: 5.5rem;
+        right: 6rem;
     }
 }
