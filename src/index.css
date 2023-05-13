@@ -15,3 +15,8 @@ a {
 li {
     list-style: none;
 }
+
+footer {
+    width: 300px;
+    margin: 0rem auto 1rem;
+}
